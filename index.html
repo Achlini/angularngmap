@@ -8,13 +8,11 @@
 </head>
 <body ng-controller="mapController">
 
-
-
   <map center="current-position" zoom="8" min-zoom="3" on-click="showDialog($event)" >
       <marker id="{{m.$id}}" position="{{m.pos.lat}},{{m.pos.lng}}" icon="img/pos.png" ng-repeat="m in markers" on-click="show(event,m)" ></marker>
 
       <info-window id="info" >
-          <div ng-non-bindable="">
+          <div ng-non-bindable="" ng-cloak>
             <h1><center>Info</center></h1>
             <h2>Name: {{mr.firstName}}</h2><br/>
             <h2>last Name: {{mr.lastName}}</h2><br/>
